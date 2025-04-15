@@ -1,0 +1,119 @@
+DL - Project:
+
+- Usar benchmark de modelos merdosos para comparação para outros modelos
+
+- Fazer tipo library
+
+
+
+
+Formatos originais
+Rescaling
+
+
+
+Usar modelo que o Pedro criou para dar inicio ao proj e com resultados de merda ---- Razão para termos usado transfer learning
+
+
+
+Perceber que o excel que tem caminhos inválidos
+Definir a parte inicial de split dos dados
+Funções a utilizar:
+- Data augmentation
+- Visualizar dados (Pre-process)
+
+
+DATA AUGMENTATION varia entre modelos
+
+
+V1 com os vários modelos:
+Muito simples
+
+
+
+
+
+
+
+
+Estrutura: 🔴🟡🟢
+-- Imports
+-- Checkar metadata
+---- metadata.head() 🟢
+---- Verificar: 🟢
+------ Quantos caminhos há 🟢
+------ Quantos repetidos 🟢
+------ Quantos inválidos 🟢
+--dividir por train/val/test 🟢 
+-- variáveis globais 🟡
+--load imagens (ter atenção ao image size) 🟡
+--visualização imagens 🟢
+-- resizing das imagens 🟢
+
+-- tentativas iniciais
+-----modelo básico
+-----modelo grande do 0
+--transfer learning
+----descobrimos os melhores modelos
+----callbacks
+---modelo x
+-----pipeline
+---modelo y
+-----pipeline
+
+
+
+Comparação dos modelos na parte final
+
+
+
+
+11/04:
+- Ponto de situação:
+---- Fiquei de começar e adaptar os modelos
+- Next steps:
+---- adaptar o DenseNet121 (Correr sem fine-tune, guardar resultados, fine-tune)
+---- ter em consideração as pontas soltas.
+---- checkar notebook inicial para complementar a estrutura que foi definida
+---- checkar chatGPT para ver sugestões nos prompts antigos
+
+
+Pontas soltas:
+- Variaveis globais
+
+
+
+
+
+DenseNet121:
+- Usar F1-Score
+- Testar com interpolation = "bilinear" e "bicubic"
+
+
+Notas:
+- Nem todos os modelos de transfer learning necessitam de normalization
+
+
+
+
+Modelos a usar:
+- inceptionresnetv2 - Pedro
+- convxnet - Rodrigo
+- densenet121 - Luís
+
+
+
+Variantes a testar:
+- interpolation - 
+
+
+
+🔴🟡🟢
+Next steps - DenseNet121:
+- mudar nomes do train/val/test🟢
+- aplicar resizing e normalization dentro de cada modelo🟢
+- usar prepare_dataset()🟢
+- aplicar preprocess do densenet especifico 🟢
+- correr modelos:
+----- normal sem e com DA
+----- Fine Tuned sem e com DA
