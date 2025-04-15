@@ -117,3 +117,21 @@ Next steps - DenseNet121:
 - correr modelos:
 ----- normal sem e com DA
 ----- Fine Tuned sem e com DA
+
+
+
+
+
+
+
+
+
+
+Next Steps:
+- Adicionar código para plots
+- Fazer library para funções repetidas (Função para ver imagens de Data augmentation)
+- Criar google docs para ir começando a entregar
+
+- uniformizar preprocess e data loading:
+----- Resizing
+----- Normalization
