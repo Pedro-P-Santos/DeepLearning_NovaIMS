@@ -24,3 +24,13 @@ def model_summary(model_class,input_shape=(224,224,3)):
     model.summary()
     return model
 
+def check_sizes(dataset):
+    import numpy as np
+    """
+    Check the sizes of the images and labels in the dataset."""
+
+    for images, labels in dataset.take(1):
+        print("Image Batch Shape:", images.shape)
+        print("Min Pixel Value:", np.min(images.numpy()))
+        print("Max Pixel Value:", np.max(images.numpy()))
+        print("Label Batch Shape:", labels.shape)
