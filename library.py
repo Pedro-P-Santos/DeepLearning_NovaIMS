@@ -34,3 +34,30 @@ def check_sizes(dataset):
         print("Min Pixel Value:", np.min(images.numpy()))
         print("Max Pixel Value:", np.max(images.numpy()))
         print("Label Batch Shape:", labels.shape)
+
+
+
+def data_loading(
+    directory,
+    labels="inferred",
+    label_mode="categorical",
+    batch_size=32,
+    image_size=(224, 224),
+    color_mode="rgb",
+    shuffle=True,
+    interpolation="bilinear",
+    seed=42
+):
+    from tensorflow import keras
+
+    return keras.utils.image_dataset_from_directory(
+        directory=directory,
+        labels=labels,
+        label_mode=label_mode,
+        batch_size=batch_size,
+        image_size=image_size,
+        color_mode=color_mode,
+        shuffle=shuffle,
+        interpolation=interpolation,
+        seed=seed
+    )
